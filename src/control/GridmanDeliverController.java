@@ -7,10 +7,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
-import moudle.Grid;
+import module.Grid;
 
 import javafx.scene.control.*;
-import moudle.GridDeliver;
+import module.GridDeliver;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,16 +19,15 @@ import static common.AQICalculator.*;
 
 public class GridmanDeliverController {
     @FXML
-    private TableColumn txtUser;
+    private TableColumn<Grid, String> txtUser;
     @FXML
-    private TableColumn txtGrid;
+    private TableColumn<Grid, String> txtGrid;
     @FXML
-    private TableColumn txtSite;
+    private TableColumn<Grid, String> txtSite;
     @FXML
-    private TableColumn txtLevel;
+    private TableColumn<Grid, String> txtLevel;
     @FXML
-    private TableColumn txtInformation;
-
+    private TableColumn<Grid, String> txtInformation;
     @FXML
     private TextField SO2con;
     @FXML
@@ -66,6 +65,7 @@ public class GridmanDeliverController {
         tableData.add(selectedGrid);
         // 自动选择第一行
         dataTable.getSelectionModel().selectFirst();
+        dataTable.refresh();
     }
 
     @FXML

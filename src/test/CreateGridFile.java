@@ -1,6 +1,6 @@
 package test;
 
-import moudle.Grid;
+import module.Grid;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;

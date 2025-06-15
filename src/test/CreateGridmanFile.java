@@ -1,7 +1,6 @@
 package test;
 
-import moudle.Gridman;
-import common.ManFileutils;
+import module.Gridman;
 
 import java.io.*;
 import java.util.HashMap;

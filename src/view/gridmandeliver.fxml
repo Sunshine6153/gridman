@@ -1,89 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.GridmanDeliverController">
-   <children>
-      <Label layoutX="88.0" layoutY="240.0" text="SO2浓度">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="88.0" layoutY="271.0" text="CO浓度">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="88.0" layoutY="303.0" text="PM2.5浓度">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="381.0" layoutY="240.0" text="ug/m3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="381.0" layoutY="271.0" text="ug/m3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="381.0" layoutY="303.0" text="ug/m3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="SO2con" layoutX="201.0" layoutY="241.0" />
-      <TextField fx:id="COcon" layoutX="201.0" layoutY="272.0" />
-      <TextField fx:id="PM25con" layoutX="201.0" layoutY="304.0" />
-      <TextField fx:id="AQlevelField" layoutX="65.0" layoutY="351.0" prefHeight="29.0" prefWidth="286.0" promptText="实测AQI等级">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Button onAction="#submitData" layoutX="65.0" layoutY="393.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="488.0" text="提交实测数据">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <TableView fx:id="dataTable" layoutY="31.0" prefHeight="203.0" prefWidth="600.0">
+<VBox xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="control.GridmanDeliverController"
+      spacing="15" style="-fx-background-color: #f5f5f5; -fx-padding: 20;"
+      prefHeight="600" prefWidth="800">
+
+    <!-- 标题 -->
+    <Label text="环境数据检测与提交" style="-fx-font-weight: bold; -fx-text-fill: #333;">
+        <font>
+            <Font size="24.0" />
+        </font>
+        <padding>
+            <Insets bottom="10" />
+        </padding>
+    </Label>
+
+    <!-- 数据表格区域 -->
+    <TableView fx:id="dataTable" prefHeight="200" prefWidth="760">
         <columns>
-          <TableColumn fx:id="txtUser" prefWidth="94.0" text="反馈用户" />
-          <TableColumn fx:id="txtGrid" prefWidth="109.0" text="网格" />
-            <TableColumn fx:id="txtSite" prefWidth="182.0" text="详细地址" />
-            <TableColumn fx:id="txtLevel" prefWidth="89.0" text="预估等级" />
-            <TableColumn fx:id="txtInformation" prefWidth="125.0" text="信息描述" />
+            <TableColumn fx:id="txtUser" text="反馈用户" prefWidth="120" />
+            <TableColumn fx:id="txtGrid" text="网格" prefWidth="120" />
+            <TableColumn fx:id="txtSite" text="详细地址" prefWidth="200" />
+            <TableColumn fx:id="txtLevel" text="预估等级" prefWidth="120" />
+            <TableColumn fx:id="txtInformation" text="信息描述" prefWidth="200" />
         </columns>
-      </TableView>
-      <TextField fx:id="SO2level" layoutX="528.0" layoutY="241.0" prefHeight="23.0" prefWidth="58.0" />
-      <TextField fx:id="Colevel" layoutX="528.0" layoutY="272.0" prefHeight="23.0" prefWidth="58.0" />
-      <TextField fx:id="PM25level" layoutX="528.0" layoutY="304.0" prefHeight="23.0" prefWidth="58.0" />
-      <Label layoutX="467.0" layoutY="241.0" text="等级">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="467.0" layoutY="271.0" text="等级">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="467.0" layoutY="303.0" text="等级">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button onAction="#DefLevel" layoutX="418.0" layoutY="348.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" text="计算AQI">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-   </children>
-</Pane>
+    </TableView>
+
+    <!-- 污染物浓度输入区域 -->
+    <GridPane hgap="15" vgap="10" style="-fx-padding: 15; -fx-background-color: white; -fx-background-radius: 5;">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="100" />
+            <ColumnConstraints minWidth="150" />
+            <ColumnConstraints minWidth="50" />
+            <ColumnConstraints minWidth="150" />
+            <ColumnConstraints minWidth="50" />
+        </columnConstraints>
+
+        <!-- 表头 -->
+        <Label text="污染物" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="浓度值" style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="单位" style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Label text="等级" style="-fx-font-weight: bold;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+        <!-- SO2行 -->
+        <Label text="SO₂浓度" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="SO2con" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="μg/m³" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="SO2level" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+        <!-- CO行 -->
+        <Label text="CO浓度" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="COcon" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label text="μg/m³" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <TextField fx:id="Colevel" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+        <!-- PM2.5行 -->
+        <Label text="PM2.5浓度" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="PM25con" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Label text="μg/m³" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <TextField fx:id="PM25level" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    </GridPane>
+
+    <!-- AQI输入和按钮区域 -->
+    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+        <TextField fx:id="AQlevelField" promptText="实测AQI等级" prefWidth="300">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+    </HBox>
+
+    <!-- 按钮区域 - 优化后的对称布局 -->
+    <HBox spacing="40" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+        <Button onAction="#DefLevel" text="计算AQI"
+                style="-fx-background-color: #4facfe; -fx-text-fill: white; -fx-font-weight: bold;
+                       -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);">
+            <font>
+                <Font size="16.0" />
+            </font>
+            <padding>
+                <Insets left="40" right="40" top="12" bottom="12" />
+            </padding>
+        </Button>
+
+        <Button onAction="#submitData" text="提交实测数据"
+                style="-fx-background-color: linear-gradient(to right, #4facfe, #00f2fe);
+                       -fx-text-fill: white; -fx-font-weight: bold;
+                       -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);">
+            <font>
+                <Font size="16.0" />
+            </font>
+            <padding>
+                <Insets left="40" right="40" top="12" bottom="12" />
+            </padding>
+        </Button>
+    </HBox>
+</VBox>

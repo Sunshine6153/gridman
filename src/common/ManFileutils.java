@@ -1,7 +1,6 @@
 package common;
 
-import moudle.Grid;
-import moudle.Gridman;
+import module.Gridman;
 
 import java.io.*;
 import java.util.HashMap;

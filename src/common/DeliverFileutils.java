@@ -1,6 +1,6 @@
 package common;
 
-import moudle.GridDeliver;
+import module.GridDeliver;
 
 import java.io.*;
 import java.util.HashMap;

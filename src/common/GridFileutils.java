@@ -1,6 +1,6 @@
 package common;
 
-import moudle.Grid;
+import module.Grid;
 
 import java.io.*;
 import java.util.HashMap;
