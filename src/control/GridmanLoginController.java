@@ -1,5 +1,6 @@
 package control;
 
+import common.ButtonHoverEffect;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,9 +14,6 @@ import javafx.event.ActionEvent;
 import java.io.*;
 import java.net.URL;
 import java.util.Map;
-import javafx.scene.input.MouseEvent;
-import javafx.animation.ScaleTransition;
-import javafx.util.Duration;
 
 import static common.ManFileutils.readMapObject;
 
@@ -27,38 +25,9 @@ public class GridmanLoginController {
     @FXML
     private TextField txtpassword;
 
-    private ScaleTransition scaleIn;
-    private ScaleTransition scaleOut;
-
     @FXML
     public void initialize() {
-        // 初始化放大动画 (悬停时)
-        scaleIn = new ScaleTransition(Duration.millis(200), btnlogin);
-        scaleIn.setToX(1.1);  // 放大到110%
-        scaleIn.setToY(1.1);
-
-        // 初始化缩小动画 (离开时)
-        scaleOut = new ScaleTransition(Duration.millis(200), btnlogin);
-        scaleOut.setToX(1.0);  // 恢复到100%
-        scaleOut.setToY(1.0);
-
-        // 设置按钮的鼠标悬停效果 - 仅放大
-        btnlogin.setOnMouseEntered(this::handleButtonHover);
-
-        // 设置按钮的鼠标离开效果 - 仅恢复
-        btnlogin.setOnMouseExited(this::handleButtonExit);
-    }
-
-    // 处理悬停效果 - 仅放大
-    private void handleButtonHover(MouseEvent event) {
-        scaleOut.stop();
-        scaleIn.play();
-    }
-
-    // 处理离开效果 - 仅恢复
-    private void handleButtonExit(MouseEvent event) {
-        scaleIn.stop();
-        scaleOut.play();
+        new ButtonHoverEffect(btnlogin);
     }
 
     public void Gridmanlogin(ActionEvent event) throws IOException {

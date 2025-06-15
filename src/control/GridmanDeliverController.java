@@ -1,6 +1,7 @@
 package control;
 
 import common.Alertutils;
+import common.ButtonHoverEffect;
 import common.DeliverFileutils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -44,11 +45,16 @@ public class GridmanDeliverController {
     private TextField AQlevelField;
     @FXML
     private TableView<Grid> dataTable;
-
+    @FXML
+    private Button calculateBtn;
+    @FXML
+    private Button submitBtn;
     private ObservableList<Grid> tableData = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
+        new ButtonHoverEffect(calculateBtn);
+        new ButtonHoverEffect(submitBtn);
         // 配置表格列
         txtUser.setCellValueFactory(new PropertyValueFactory<>("user"));
         txtGrid.setCellValueFactory(new PropertyValueFactory<>("grid"));

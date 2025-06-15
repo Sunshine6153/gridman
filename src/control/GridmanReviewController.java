@@ -16,12 +16,10 @@ import common.GridFileutils;
 import module.Grid;
 import javafx.animation.ScaleTransition;
 import javafx.util.Duration;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.Button;
-
+import common.ButtonHoverEffect;
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,8 +38,7 @@ public class GridmanReviewController {
 
     @FXML
     public void initialize() {
-        // 初始化动画效果
-        setupButtonAnimation();
+        new ButtonHoverEffect(deliverBtn);
         setupTableRowAnimation();
 
         // 配置表格列
@@ -52,37 +49,14 @@ public class GridmanReviewController {
         loadGridData();
     }
 
-    private void setupButtonAnimation() {
-        // 悬停时放大到110%
-        ScaleTransition grow = new ScaleTransition(Duration.millis(200), deliverBtn);
-        grow.setToX(1.1);
-        grow.setToY(1.1);
-
-        // 离开时恢复到100%
-        ScaleTransition shrink = new ScaleTransition(Duration.millis(200), deliverBtn);
-        shrink.setToX(1.0);
-        shrink.setToY(1.0);
-
-        deliverBtn.setOnMouseEntered(e -> {
-            shrink.stop();
-            grow.playFromStart();
-        });
-
-        deliverBtn.setOnMouseExited(e -> {
-            grow.stop();
-            shrink.playFromStart();
-        });
-    }
-
-
     private void setupTableRowAnimation() {
         tableView.setRowFactory(tv -> {
             TableRow<Grid> row = new TableRow<>();
 
-            // 悬停时放大到103%
+            // 悬停时放大到110%
             ScaleTransition rowGrow = new ScaleTransition(Duration.millis(150), row);
-            rowGrow.setToX(1.03);
-            rowGrow.setToY(1.03);
+            rowGrow.setToX(1.1);
+            rowGrow.setToY(1.1);
 
             // 离开时恢复到100%
             ScaleTransition rowShrink = new ScaleTransition(Duration.millis(150), row);
