@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="43.0" layoutY="32.0" text="公众数据监督详情">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TableView layoutY="110.0" prefHeight="200.0" prefWidth="601.0">
+            <columns>
+                <TableColumn prefWidth="85.33331549167633" text="反馈信息编号" />
+                <TableColumn prefWidth="65.33336639404297" text="反馈者信息" />
+                <TableColumn prefWidth="103.33331298828125" text="反馈联系电话" />
+                <TableColumn prefWidth="104.6666259765625" text="反馈信息地址" />
+                <TableColumn prefWidth="105.3333740234375" text="反馈信息描述" />
+                <TableColumn prefWidth="70.00003051757812" text="预估等级" />
+                <TableColumn prefWidth="68.6666259765625" text="反馈时间" />
+            </columns>
+        </TableView>
+      <RadioButton layoutX="115.0" layoutY="322.0" mnemonicParsing="false" text="是" />
+      <RadioButton layoutX="115.0" layoutY="361.0" mnemonicParsing="false" text="否" />
+      <Label layoutX="25.0" layoutY="341.0" text="是否异地指派：" />
+      <Label layoutX="195.0" layoutY="322.0" text="指派给" />
+      <ComboBox layoutX="251.0" layoutY="318.0" prefHeight="23.0" prefWidth="95.0" promptText="省区域" />
+      <Label layoutX="195.0" layoutY="361.0" text="指派给" />
+      <ComboBox layoutX="251.0" layoutY="357.0" prefHeight="23.0" prefWidth="95.0" promptText="网格员" />
+      <ComboBox layoutX="358.0" layoutY="318.0" prefHeight="23.0" prefWidth="95.0" promptText="市区域" />
+      <ComboBox layoutX="464.0" layoutY="318.0" prefHeight="23.0" prefWidth="95.0" promptText="网格员" />
+      <Label layoutX="438.0" layoutY="361.0" text="本地指派" />
+    </children>
+</AnchorPane>

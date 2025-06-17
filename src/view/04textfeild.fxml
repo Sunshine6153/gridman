@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Textfeild">
+   <children>
+      <Label layoutX="53.0" layoutY="42.0" text="公众数据监督详情">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="131.0" text="反馈者信息">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="92.0" text="反馈信息编号">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="167.0" text="反馈联系电话">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="200.0" text="反馈信息地址">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="271.0" text="预估等级">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="237.0" text="反馈信息描述">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="308.0" text="反馈日期时间">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="209.0" layoutY="92.0" />
+      <TextField layoutX="209.0" layoutY="131.0" />
+      <TextField layoutX="209.0" layoutY="167.0" />
+      <TextField layoutX="209.0" layoutY="200.0" prefHeight="0.0" prefWidth="161.0" />
+      <TextField layoutX="209.0" layoutY="237.0" />
+      <TextField layoutX="209.0" layoutY="271.0" />
+      <TextField layoutX="209.0" layoutY="308.0" />
+   </children>
+</AnchorPane>
