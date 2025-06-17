@@ -24,7 +24,7 @@ public class GridmanLoginController {
     private TextField txtaccount;
     @FXML
     private TextField txtpassword;
-
+    
     @FXML
     public void initialize() {
         new ButtonHoverEffect(btnlogin);

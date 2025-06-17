@@ -20,6 +20,7 @@ public class Userlogin extends Application{
         URL url=getClass().getResource("view/gridmanlogin.fxml");
         fxmlLoader.setLocation(url);
         Parent root=fxmlLoader.load();
+        stage.setTitle("东软环保公众监督平台—网格员端");
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
