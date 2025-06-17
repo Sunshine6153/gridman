@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.">
+   <children>
+      <Label layoutX="212.0" layoutY="42.0" text="AQI空气指数超标趋势">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="56.0" layoutY="100.0" prefHeight="253.0" prefWidth="490.0">
+        <columns>
+          <TableColumn prefWidth="121.0" text="序号" />
+          <TableColumn prefWidth="188.0" text="月份" />
+            <TableColumn prefWidth="180.0" text="AQI空气质量指数超标数量" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

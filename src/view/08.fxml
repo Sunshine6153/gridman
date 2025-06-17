@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.">
+   <children>
+      <Label layoutX="235.0" layoutY="29.0" prefHeight="24.0" prefWidth="131.0" text="省分组分项统计">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutY="79.0" prefHeight="288.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="省编号" />
+          <TableColumn prefWidth="75.0" text="省简称" />
+            <TableColumn prefWidth="75.0" text="省名称" />
+            <TableColumn prefWidth="95.0" text="SO2超标累计" />
+            <TableColumn prefWidth="85.0" text="CO超标累计" />
+            <TableColumn prefWidth="105.0" text="PM2.5超标累计" />
+            <TableColumn prefWidth="89.0" text="AQI超标累计" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

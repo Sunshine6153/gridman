@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.">
+   <children>
+      <Label layoutX="212.0" layoutY="42.0" text="AQI空气指数级别分布">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="56.0" layoutY="100.0" prefHeight="253.0" prefWidth="490.0">
+        <columns>
+          <TableColumn prefWidth="155.0" text="AQI指数等级" />
+          <TableColumn prefWidth="175.0" text="AQI指数等级" />
+            <TableColumn prefWidth="159.0" text="AQI指数等级分布" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
